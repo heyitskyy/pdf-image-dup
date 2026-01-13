@@ -1,0 +1,118 @@
+{
+  "pdf_id": 13,
+  "pdf_filename": "ab60797ed1b54c74a4eb025f9bc9b177_5024231049_Danendra_Galang_Yugastama.pdf",
+  "stored_pdf_path": "storage\\pdfs\\ab60797ed1b54c74a4eb025f9bc9b177_5024231049_Danendra_Galang_Yugastama.pdf",
+  "num_images_processed": 5,
+  "results": [
+    {
+      "page": 1,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_13\\embedded_p1_img1.png",
+      "phash": "939d6672cd4c3a91",
+      "dhash": "017c18727a086c03",
+      "ehash": "972f787aa7925884",
+      "is_duplicate": true,
+      "match": {
+        "score": 0,
+        "phash_dist": 0,
+        "dhash_dist": 0,
+        "ehash_dist": 0,
+        "old_pdf_id": 12,
+        "old_pdf_filename": "479a600ddaaf4db2b5eb2c88d1c712d0_5024231051_Zaky Ahmad S. P_Laporan Final Project PCV.pdf",
+        "old_page": 1,
+        "old_source": "embedded",
+        "old_img_index": 1,
+        "old_img_path": "storage\\images\\pdf_12\\embedded_p1_img1.png"
+      }
+    },
+    {
+      "page": 2,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_13\\embedded_p2_img1.png",
+      "phash": "939d6672cd4c3a91",
+      "dhash": "017c18727a086c03",
+      "ehash": "972f787aa7925884",
+      "is_duplicate": true,
+      "match": {
+        "score": 0,
+        "phash_dist": 0,
+        "dhash_dist": 0,
+        "ehash_dist": 0,
+        "old_pdf_id": 12,
+        "old_pdf_filename": "479a600ddaaf4db2b5eb2c88d1c712d0_5024231051_Zaky Ahmad S. P_Laporan Final Project PCV.pdf",
+        "old_page": 1,
+        "old_source": "embedded",
+        "old_img_index": 1,
+        "old_img_path": "storage\\images\\pdf_12\\embedded_p1_img1.png"
+      }
+    },
+    {
+      "page": 3,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_13\\embedded_p3_img1.png",
+      "phash": "939d6672cd4c3a91",
+      "dhash": "017c18727a086c03",
+      "ehash": "972f787aa7925884",
+      "is_duplicate": true,
+      "match": {
+        "score": 0,
+        "phash_dist": 0,
+        "dhash_dist": 0,
+        "ehash_dist": 0,
+        "old_pdf_id": 12,
+        "old_pdf_filename": "479a600ddaaf4db2b5eb2c88d1c712d0_5024231051_Zaky Ahmad S. P_Laporan Final Project PCV.pdf",
+        "old_page": 1,
+        "old_source": "embedded",
+        "old_img_index": 1,
+        "old_img_path": "storage\\images\\pdf_12\\embedded_p1_img1.png"
+      }
+    },
+    {
+      "page": 4,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_13\\embedded_p4_img1.png",
+      "phash": "939d6672cd4c3a91",
+      "dhash": "017c18727a086c03",
+      "ehash": "972f787aa7925884",
+      "is_duplicate": true,
+      "match": {
+        "score": 0,
+        "phash_dist": 0,
+        "dhash_dist": 0,
+        "ehash_dist": 0,
+        "old_pdf_id": 12,
+        "old_pdf_filename": "479a600ddaaf4db2b5eb2c88d1c712d0_5024231051_Zaky Ahmad S. P_Laporan Final Project PCV.pdf",
+        "old_page": 1,
+        "old_source": "embedded",
+        "old_img_index": 1,
+        "old_img_path": "storage\\images\\pdf_12\\embedded_p1_img1.png"
+      }
+    },
+    {
+      "page": 5,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_13\\embedded_p5_img1.png",
+      "phash": "939d6672cd4c3a91",
+      "dhash": "017c18727a086c03",
+      "ehash": "972f787aa7925884",
+      "is_duplicate": true,
+      "match": {
+        "score": 0,
+        "phash_dist": 0,
+        "dhash_dist": 0,
+        "ehash_dist": 0,
+        "old_pdf_id": 12,
+        "old_pdf_filename": "479a600ddaaf4db2b5eb2c88d1c712d0_5024231051_Zaky Ahmad S. P_Laporan Final Project PCV.pdf",
+        "old_page": 1,
+        "old_source": "embedded",
+        "old_img_index": 1,
+        "old_img_path": "storage\\images\\pdf_12\\embedded_p1_img1.png"
+      }
+    }
+  ]
+}

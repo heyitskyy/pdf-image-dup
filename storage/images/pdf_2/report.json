@@ -1,0 +1,30 @@
+{
+  "pdf_id": 2,
+  "pdf_filename": "akademik.its.ac.id_rep_transkrip_sementara.php.pdf",
+  "stored_pdf_path": "storage\\pdfs\\akademik.its.ac.id_rep_transkrip_sementara.php.pdf",
+  "num_images_processed": 2,
+  "results": [
+    {
+      "page": 1,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_2\\embedded_p1_img1.png",
+      "phash": "ef9891d89427d0e6",
+      "dhash": "796907232b114f4f",
+      "ehash": "d1877e706e782b18",
+      "is_duplicate": false,
+      "match": null
+    },
+    {
+      "page": 1,
+      "source": "embedded",
+      "img_index": 2,
+      "img_path": "storage\\images\\pdf_2\\embedded_p1_img2.png",
+      "phash": "9d31528b4b6c6dc6",
+      "dhash": "70dc963373b2f470",
+      "ehash": "9d4959a6639c6d32",
+      "is_duplicate": false,
+      "match": null
+    }
+  ]
+}
