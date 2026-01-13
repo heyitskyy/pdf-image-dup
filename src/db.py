@@ -1,12 +1,10 @@
 import sqlite3
-from pathlib import Path
-from typing import Iterable, Optional, Tuple, List
+from typing import Optional, Tuple, List
 from src.config import DB_PATH, STORAGE_DIR
 
 def get_conn() -> sqlite3.Connection:
     STORAGE_DIR.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(DB_PATH)
-    # WAL lebih aman untuk akses bersamaan ringan
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.execute("PRAGMA journal_mode=WAL;")
     conn.execute("PRAGMA foreign_keys=ON;")
     return conn
@@ -20,7 +18,7 @@ def init_db() -> None:
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         filename TEXT NOT NULL,
         stored_path TEXT NOT NULL,
-        uploaded_at TEXT DEFAULT (datetime('now'))
+        uploaded_at TEXT DEFAULT (datetime('now','localtime'))
     )
     """)
 
@@ -29,12 +27,12 @@ def init_db() -> None:
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         pdf_id INTEGER NOT NULL,
         page INTEGER NOT NULL,
-        source TEXT NOT NULL,             -- 'embedded' atau 'render'
-        img_index INTEGER NOT NULL,        -- index di halaman / hasil render
+        source TEXT NOT NULL,
+        img_index INTEGER NOT NULL,
         img_path TEXT NOT NULL,
         width INTEGER,
         height INTEGER,
-        created_at TEXT DEFAULT (datetime('now')),
+        created_at TEXT DEFAULT (datetime('now','localtime')),
         FOREIGN KEY(pdf_id) REFERENCES pdf_files(id)
     )
     """)
@@ -65,7 +63,7 @@ def insert_pdf(filename: str, stored_path: str) -> int:
     conn.commit()
     pdf_id = cur.lastrowid
     conn.close()
-    return pdf_id
+    return int(pdf_id)
 
 def insert_image(pdf_id: int, page: int, source: str, img_index: int, img_path: str, w: int, h: int) -> int:
     conn = get_conn()
@@ -73,11 +71,11 @@ def insert_image(pdf_id: int, page: int, source: str, img_index: int, img_path: 
     cur.execute("""
         INSERT INTO images(pdf_id, page, source, img_index, img_path, width, height)
         VALUES(?,?,?,?,?,?,?)
-    """, (pdf_id, page, source, img_index, img_path, w, h))
+    """, (int(pdf_id), int(page), source, int(img_index), img_path, int(w), int(h)))
     conn.commit()
     image_id = cur.lastrowid
     conn.close()
-    return image_id
+    return int(image_id)
 
 def insert_fingerprint(image_id: int, phash: str, dhash: str, ehash: str) -> None:
     conn = get_conn()
@@ -85,20 +83,20 @@ def insert_fingerprint(image_id: int, phash: str, dhash: str, ehash: str) -> Non
     cur.execute("""
         INSERT INTO fingerprints(image_id, phash, dhash, ehash)
         VALUES(?,?,?,?)
-    """, (image_id, phash, dhash, ehash))
+    """, (int(image_id), phash, dhash, ehash))
     conn.commit()
     conn.close()
 
-def fetch_all_fingerprints() -> List[Tuple[int, int, str, str]]:
+def fetch_all_fingerprints() -> List[Tuple[int, int, str, str, str]]:
     """
-    return: list of (fingerprint_id, image_id, phash, dhash)
+    return: list of (fingerprint_id, image_id, phash, dhash, ehash)
     """
     conn = get_conn()
     cur = conn.cursor()
     cur.execute("SELECT id, image_id, phash, dhash, ehash FROM fingerprints")
     rows = cur.fetchall()
     conn.close()
-    return rows
+    return rows  # type: ignore
 
 def fetch_image_info(image_id: int) -> Optional[Tuple]:
     conn = get_conn()
@@ -109,7 +107,7 @@ def fetch_image_info(image_id: int) -> Optional[Tuple]:
         FROM images
         JOIN pdf_files ON pdf_files.id = images.pdf_id
         WHERE images.id = ?
-    """, (image_id,))
+    """, (int(image_id),))
     row = cur.fetchone()
     conn.close()
     return row

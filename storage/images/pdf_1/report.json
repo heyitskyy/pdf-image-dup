@@ -1,0 +1,30 @@
+{
+  "pdf_id": 1,
+  "pdf_filename": "b8c6e3347ae44d13a4adfa703a2395cb_TestDuplicate_1.pdf",
+  "stored_pdf_path": "storage\\pdfs\\b8c6e3347ae44d13a4adfa703a2395cb_TestDuplicate_1.pdf",
+  "num_images_processed": 2,
+  "results": [
+    {
+      "page": 1,
+      "source": "embedded",
+      "img_index": 1,
+      "img_path": "storage\\images\\pdf_1\\embedded_p1_img1.png",
+      "phash": "ebc6a9b9501933c5",
+      "dhash": "9b256444245b5bd1",
+      "ehash": "d664649c2c5e1fa3",
+      "is_duplicate": false,
+      "match": null
+    },
+    {
+      "page": 1,
+      "source": "embedded",
+      "img_index": 2,
+      "img_path": "storage\\images\\pdf_1\\embedded_p1_img2.png",
+      "phash": "b7c480a76644ccfe",
+      "dhash": "c5d435545d5a5a5b",
+      "ehash": "80bd3f81353f2497",
+      "is_duplicate": false,
+      "match": null
+    }
+  ]
+}
