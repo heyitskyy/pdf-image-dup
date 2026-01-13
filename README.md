@@ -75,7 +75,7 @@ py --version
 ### 1) Clone repo
 
 ```bash
-git clone <URL_REPO_KAMU>
+git clone (https://github.com/heyitskyy/pdf-image-dup)
 cd pdf-image-dup
 ```
 
@@ -182,15 +182,3 @@ Buka `src/config.py` untuk mengubah:
 3. Ingest PDF B → hasil seharusnya terdeteksi DUP pada gambar terkait
 
 ---
-
-## 📄 License
-
-[Tentukan lisensi project kamu di sini]
-
-## 🤝 Contributing
-
-Pull requests are welcome! Silakan buka issue terlebih dahulu untuk diskusi perubahan besar.
-
----
-
-**Happy coding! 🚀**
